@@ -1,0 +1,17 @@
+.hero_banner {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  height: calc(100vh - 100px);
+  background-color: #4f141f;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .hero_banner {
+    flex-direction: row;
+    margin-top: 0;
+    gap: 0;
+    height: 100vh ;
+  }
+}
