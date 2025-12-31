@@ -69,7 +69,7 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type BannerManagementDocumentDataSlicesSlice = CollectionBannerSlice;
+type BannerManagementDocumentDataSlicesSlice = never;
 
 /**
  * Content for Banner Management documents
