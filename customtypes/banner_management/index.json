@@ -1,0 +1,22 @@
+{
+  "id": "banner_management",
+  "json": {
+    "Main": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "collection_banner": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  },
+  "label": "Banner Management",
+  "repeatable": false,
+  "status": true,
+  "format": "custom"
+}

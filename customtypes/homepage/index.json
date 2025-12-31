@@ -1,0 +1,343 @@
+{
+  "id": "homepage",
+  "json": {
+    "Banner": {
+      "hero_banners": {
+        "type": "Group",
+        "config": {
+          "label": "Hero Banners",
+          "repeat": true,
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Image",
+                "constraint": {
+                  "width": 1500,
+                  "height": 1500
+                },
+                "thumbnails": [
+                  {
+                    "name": "Mobile",
+                    "width": 430,
+                    "height": 430
+                  }
+                ]
+              }
+            },
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "lower_title": {
+              "type": "Text",
+              "config": {
+                "label": "Lower Title",
+                "placeholder": ""
+              }
+            },
+            "text": {
+              "type": "Text",
+              "config": {
+                "label": "Text",
+                "placeholder": ""
+              }
+            },
+            "title_2": {
+              "type": "Text",
+              "config": {
+                "label": "Title 2",
+                "placeholder": ""
+              }
+            },
+            "button_text": {
+              "type": "Text",
+              "config": {
+                "label": "Button Text",
+                "placeholder": ""
+              }
+            },
+            "pathname": {
+              "type": "Text",
+              "config": {
+                "label": "Pathname",
+                "placeholder": ""
+              }
+            },
+            "background_color": {
+              "type": "Text",
+              "config": {
+                "label": "Background Color",
+                "placeholder": "#4f141f"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Collections": {
+      "collections": {
+        "type": "Group",
+        "config": {
+          "label": "Collections",
+          "repeat": true,
+          "fields": {
+            "collection": {
+              "type": "Image",
+              "config": {
+                "label": "Collection",
+                "constraint": {
+                  "width": 613,
+                  "height": 674
+                },
+                "thumbnails": [
+                  {
+                    "name": "Mobile",
+                    "width": 400,
+                    "height": 438
+                  }
+                ]
+              }
+            },
+            "title_top": {
+              "type": "Text",
+              "config": {
+                "label": "Title Top",
+                "placeholder": ""
+              }
+            },
+            "sub_title_top": {
+              "type": "Text",
+              "config": {
+                "label": "Sub Title Top",
+                "placeholder": ""
+              }
+            },
+            "title_bottom": {
+              "type": "Text",
+              "config": {
+                "label": "Title Bottom",
+                "placeholder": ""
+              }
+            },
+            "sub_title_bottom": {
+              "type": "Text",
+              "config": {
+                "label": "Sub Title Bottom",
+                "placeholder": ""
+              }
+            },
+            "pathname": {
+              "type": "Text",
+              "config": {
+                "label": "Pathname",
+                "placeholder": ""
+              }
+            },
+            "button_text": {
+              "type": "Text",
+              "config": {
+                "label": "Button Text",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "Suggestions": {
+      "product_section": {
+        "type": "Group",
+        "config": {
+          "label": "Product Section",
+          "repeat": true,
+          "fields": {
+            "heading_title": {
+              "type": "Text",
+              "config": {
+                "label": "Heading Title",
+                "placeholder": ""
+              }
+            },
+            "sub_title": {
+              "type": "Text",
+              "config": {
+                "label": "Sub Title",
+                "placeholder": ""
+              }
+            },
+            "heading_title_2": {
+              "type": "Text",
+              "config": {
+                "label": "Heading Title 2",
+                "placeholder": ""
+              }
+            },
+            "widget_id": {
+              "type": "Text",
+              "config": {
+                "label": "Widget ID",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "Video Banner": {
+      "video_banner": {
+        "type": "Group",
+        "config": {
+          "label": "Video Banner",
+          "repeat": false,
+          "fields": {
+            "video": {
+              "type": "Link",
+              "config": {
+                "label": "Video",
+                "placeholder": "",
+                "select": "media",
+                "allowText": true
+              }
+            },
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "sub_title": {
+              "type": "Text",
+              "config": {
+                "label": "Sub Title",
+                "placeholder": ""
+              }
+            },
+            "button_text": {
+              "type": "Text",
+              "config": {
+                "label": "Button Text",
+                "placeholder": ""
+              }
+            },
+            "pathname": {
+              "type": "Text",
+              "config": {
+                "label": "Pathname",
+                "placeholder": ""
+              }
+            },
+            "banner": {
+              "type": "Image",
+              "config": {
+                "label": "Banner",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "Featured In": {
+      "feature_in": {
+        "type": "Group",
+        "config": {
+          "label": "Feature In",
+          "repeat": true,
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "mobile_image": {
+              "type": "Image",
+              "config": {
+                "label": "Mobile Image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "USP": {
+      "usp": {
+        "type": "Group",
+        "config": {
+          "label": "USP",
+          "repeat": true,
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "text": {
+              "type": "Text",
+              "config": {
+                "label": "Text",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "Blogs": {
+      "blog": {
+        "type": "Group",
+        "config": {
+          "label": "Blog",
+          "repeat": true,
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "description": {
+              "type": "Text",
+              "config": {
+                "label": "Description",
+                "placeholder": ""
+              }
+            },
+            "pathname": {
+              "type": "Text",
+              "config": {
+                "label": "Pathname",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "label": "Homepage",
+  "repeatable": false,
+  "status": true,
+  "format": "custom"
+}

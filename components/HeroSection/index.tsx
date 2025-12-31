@@ -11,7 +11,7 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from '@/components/ui/Carousel'
+} from '@/components/Carousel'
 import cn from 'classnames'
 
 interface IHeroBanner {

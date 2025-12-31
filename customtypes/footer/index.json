@@ -1,0 +1,109 @@
+{
+  "id": "footer",
+  "json": {
+    "Newsletter": {
+      "newsletter": {
+        "type": "Group",
+        "config": {
+          "label": "Newsletter",
+          "repeat": false,
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "description": {
+              "type": "Text",
+              "config": {
+                "label": "Description",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "Inspiration": {
+      "inspiration": {
+        "type": "Group",
+        "config": {
+          "label": "Inspiration",
+          "repeat": true,
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "pathname": {
+              "type": "Text",
+              "config": {
+                "label": "Pathname",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "Customer Care": {
+      "customer_care": {
+        "type": "Group",
+        "config": {
+          "label": "Customer Care",
+          "repeat": true,
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "pathname": {
+              "type": "Text",
+              "config": {
+                "label": "Pathname",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "Policies": {
+      "policies": {
+        "type": "Group",
+        "config": {
+          "label": "Policies",
+          "repeat": true,
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "pathname": {
+              "type": "Text",
+              "config": {
+                "label": "Pathname",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "format": "custom"
+}
