@@ -13,7 +13,7 @@ export default function PagePreview() {
   return (
     <PrismicPreview repositoryName={repositoryName}>
       {/* Toolbar custom */}
-      <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-2 rounded bg-black px-4 py-2 text-sm text-white">
+      <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-2 rounded  px-4 py-2 text-sm border">
         <span>Preview mode</span>
         <input
           className="p-1 text-black"
