@@ -69,7 +69,7 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type BannerManagementDocumentDataSlicesSlice = never;
+type BannerManagementDocumentDataSlicesSlice = BannerSliceSlice;
 
 /**
  * Content for Banner Management documents
@@ -100,6 +100,40 @@ export type BannerManagementDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<
     Simplify<BannerManagementDocumentData>,
     "banner_management",
+    Lang
+  >;
+
+type BannerSliceDocumentDataSlicesSlice = BannerSliceSlice;
+
+/**
+ * Content for Banner Slice documents
+ */
+interface BannerSliceDocumentData {
+  /**
+   * Slice Zone field in *Banner Slice*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_slice.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<BannerSliceDocumentDataSlicesSlice>;
+}
+
+/**
+ * Banner Slice document from Prismic
+ *
+ * - **API ID**: `banner_slice`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BannerSliceDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<BannerSliceDocumentData>,
+    "banner_slice",
     Lang
   >;
 
@@ -731,8 +765,94 @@ export type HomepageDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | BannerManagementDocument
+  | BannerSliceDocument
   | FooterDocument
   | HomepageDocument;
+
+/**
+ * Primary content in *BannerSlice → Default → Primary*
+ */
+export interface BannerSliceSliceDefaultPrimary {
+  /**
+   * Image field in *BannerSlice → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_slice.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *BannerSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_slice.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * description field in *BannerSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_slice.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * CTAText field in *BannerSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_slice.default.primary.ctatext
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  ctatext: prismic.KeyTextField;
+
+  /**
+   * CTALink field in *BannerSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner_slice.default.primary.ctalink
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  ctalink: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for BannerSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BannerSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BannerSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BannerSlice*
+ */
+type BannerSliceSliceVariation = BannerSliceSliceDefault;
+
+/**
+ * BannerSlice Shared Slice
+ *
+ * - **API ID**: `banner_slice`
+ * - **Description**: BannerSlice
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BannerSliceSlice = prismic.SharedSlice<
+  "banner_slice",
+  BannerSliceSliceVariation
+>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -758,6 +878,9 @@ declare module "@prismicio/client" {
       BannerManagementDocument,
       BannerManagementDocumentData,
       BannerManagementDocumentDataSlicesSlice,
+      BannerSliceDocument,
+      BannerSliceDocumentData,
+      BannerSliceDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataNewsletterItem,
@@ -774,6 +897,10 @@ declare module "@prismicio/client" {
       HomepageDocumentDataUspItem,
       HomepageDocumentDataBlogItem,
       AllDocumentTypes,
+      BannerSliceSlice,
+      BannerSliceSliceDefaultPrimary,
+      BannerSliceSliceVariation,
+      BannerSliceSliceDefault,
     };
   }
 }

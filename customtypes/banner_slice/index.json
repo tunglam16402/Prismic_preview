@@ -1,9 +1,9 @@
 {
-  "id": "banner_management",
-  "label": "Banner Management",
+  "format": "custom",
+  "id": "banner_slice",
+  "label": "Banner Slice",
   "repeatable": false,
   "status": true,
-  "format": "custom",
   "json": {
     "Main": {
       "slices": {
