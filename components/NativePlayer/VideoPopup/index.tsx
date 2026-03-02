@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { FileType } from "..";
 
 export interface File {
@@ -16,41 +16,49 @@ interface VideoPopupItemProps {
 }
 
 const VideoPopupItem: React.FC<VideoPopupItemProps> = ({ file }) => {
-  const openInNativePlayer = () => {
-    const userAgent = navigator.userAgent.toLowerCase();
-    const isAndroid = /android/i.test(userAgent);
-    const isIOS = /iphone|ipad|ipod/i.test(userAgent);
+  const [isLoading, setIsLoading] = useState(false);
 
-    if (isAndroid) {
-      // Android: Tạo một link tạm thời với intent
-      const link = document.createElement("a");
-
-      // Remove protocol
-      const urlWithoutProtocol = file.url.replace(/^https?:\/\//, "");
-      const mimeType = file.url.endsWith(".webm") ? "video/webm" : "video/mp4";
-
-      // Intent URL format
-      link.href = `intent://${urlWithoutProtocol}#Intent;action=android.intent.action.VIEW;type=${mimeType};end`;
-
-      // Thêm vào DOM, click, rồi xóa
+  const openInNativePlayer = async () => {
+    setIsLoading(true);
+    
+    try {
+      // Fetch video as blob
+      const response = await fetch(file.url, {
+        mode: 'cors',
+        cache: 'no-cache',
+      });
+      
+      if (!response.ok) throw new Error('Failed to fetch');
+      
+      const blob = await response.blob();
+      
+      // Create blob URL
+      const blobUrl = URL.createObjectURL(blob);
+      
+      // Create download link
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = file.name || 'video.mp4';
+      
+      // Force download attribute để trigger "Open with..."
+      link.setAttribute('download', file.name || 'video.mp4');
+      
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-
-      console.log("Intent URL:", link.href);
-    } else if (isIOS) {
-      // iOS: Mở trực tiếp URL - Safari sẽ dùng player của nó
-      const link = document.createElement("a");
-      link.href = file.url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } else {
-      // Desktop
-      window.open(file.url, "_blank");
+      
+      // Cleanup blob URL
+      setTimeout(() => {
+        URL.revokeObjectURL(blobUrl);
+        setIsLoading(false);
+      }, 1000);
+      
+    } catch (error) {
+      console.error('Error:', error);
+      setIsLoading(false);
+      
+      // Fallback: mở direct URL
+      window.open(file.url, '_blank');
     }
   };
 
@@ -59,6 +67,14 @@ const VideoPopupItem: React.FC<VideoPopupItemProps> = ({ file }) => {
       onClick={openInNativePlayer}
       className="group flex cursor-pointer flex-col items-center gap-5 p-2 py-10 shadow-xl hover:bg-gray-100 relative transition-all"
     >
+      {/* Loading overlay */}
+      {isLoading && (
+        <div className="absolute inset-0 bg-white bg-opacity-90 flex flex-col items-center justify-center z-20 rounded-xl">
+          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600 mb-2"></div>
+          <div className="text-sm text-gray-600">Preparing video...</div>
+        </div>
+      )}
+      
       <div className="rounded-xl border p-3 shadow-sm w-full">
         <div className="relative flex h-40 w-full items-center justify-center rounded-lg bg-gradient-to-br from-blue-900 via-purple-900 to-gray-900 overflow-hidden">
           {/* Animated background */}
@@ -86,7 +102,7 @@ const VideoPopupItem: React.FC<VideoPopupItemProps> = ({ file }) => {
             <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
             </svg>
-            <span>Native</span>
+            <span>Open with...</span>
           </div>
         </div>
 
@@ -102,7 +118,7 @@ const VideoPopupItem: React.FC<VideoPopupItemProps> = ({ file }) => {
               {file.url.endsWith(".webm") ? "WebM" : "MP4"}
             </span>
             <span>•</span>
-            <span>Tap to play</span>
+            <span>Tap to download & open</span>
           </div>
         </div>
       </div>
