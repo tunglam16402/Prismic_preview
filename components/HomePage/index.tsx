@@ -9,7 +9,7 @@ interface IHomePage {
 const HomePage: React.FC<IHomePage> = ({ data }) => {
   return (
     <div>
-      <HeroSection banners={data.hero_banners} />
+      {/* <HeroSection banners={data.hero_banners} /> */}
       <div className="mt-40">
         <NativePlayer />
       </div>

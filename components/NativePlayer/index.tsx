@@ -1,4 +1,5 @@
 import React from "react";
+import VideoPopupItem from "./VideoPopup";
 
 export enum FileType {
   DOCUMENT = "document",
@@ -52,22 +53,7 @@ const NativePlayer = () => {
       {videoMockdata
         .filter((file: File) => file.type === FileType.VIDEO)
         .map((file: File) => (
-          <a
-            key={file.sk}
-            href={`${file.url}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex cursor-pointer flex-col items-center gap-5 p-2 py-10 shadow-xl hover:bg-gray-100"
-          >
-            <div className="rounded-xl border p-3 shadow-sm">
-              <div className="relative flex h-40 w-full items-center justify-center rounded-lg bg-black">
-                <span className="text-3xl text-white">▶</span>
-              </div>
-
-              <div className="mt-2 text-sm font-medium">{file.name}</div>
-              <div className="text-xs text-gray-400">WEBM Video</div>
-            </div>
-          </a>
+          <VideoPopupItem file={file} key={file.sk} />
         ))}
     </div>
   );

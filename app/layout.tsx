@@ -31,8 +31,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        <PrismicPreview repositoryName={repositoryName} />
-        <PagePreview />
+        {/* <PrismicPreview repositoryName={repositoryName} /> */}
+        {/* <PagePreview /> */}
       </body>
     </html>
   );
