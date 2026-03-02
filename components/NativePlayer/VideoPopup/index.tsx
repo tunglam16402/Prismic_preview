@@ -22,28 +22,34 @@ const VideoPopupItem: React.FC<VideoPopupItemProps> = ({ file }) => {
     const isIOS = /iphone|ipad|ipod/i.test(userAgent);
 
     if (isAndroid) {
-      // Android Intent - theo StackOverflow link bạn gửi
-      // Format: intent://[url without protocol]#Intent;action=[action];type=[mime];end
+      // Android: Tạo một link tạm thời với intent
+      const link = document.createElement("a");
 
-      // Remove protocol from URL
+      // Remove protocol
       const urlWithoutProtocol = file.url.replace(/^https?:\/\//, "");
-
-      // Determine mime type
       const mimeType = file.url.endsWith(".webm") ? "video/webm" : "video/mp4";
 
-      // Create intent URL
-      const intentUrl = `intent://${urlWithoutProtocol}#Intent;action=android.intent.action.VIEW;type=${mimeType};end`;
+      // Intent URL format
+      link.href = `intent://${urlWithoutProtocol}#Intent;action=android.intent.action.VIEW;type=${mimeType};end`;
 
-      console.log("Opening with intent:", intentUrl);
+      // Thêm vào DOM, click, rồi xóa
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
-      // Redirect to intent - Android will show app chooser
-      window.location.href = intentUrl;
+      console.log("Intent URL:", link.href);
     } else if (isIOS) {
-      // iOS doesn't support intents, but we can try data URI or direct link
-      // iOS will use its built-in player in fullscreen by default
-      window.open(file.url, "_blank");
+      // iOS: Mở trực tiếp URL - Safari sẽ dùng player của nó
+      const link = document.createElement("a");
+      link.href = file.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     } else {
-      // Desktop fallback
+      // Desktop
       window.open(file.url, "_blank");
     }
   };
