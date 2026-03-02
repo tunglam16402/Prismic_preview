@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { FileType } from "..";
 
 export interface File {
@@ -16,48 +16,40 @@ interface VideoPopupItemProps {
 }
 
 const VideoPopupItem: React.FC<VideoPopupItemProps> = ({ file }) => {
-  const [isLoading, setIsLoading] = useState(false);
+  const openInNativePlayer = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isAndroid = /android/i.test(userAgent);
+    const isIOS = /iphone|ipad|ipod/i.test(userAgent);
 
-  const openInNativePlayer = async () => {
-    setIsLoading(true);
-    
-    try {
-      // Fetch video as blob
-      const response = await fetch(file.url, {
-        mode: 'cors',
-        cache: 'no-cache',
-      });
-      
-      if (!response.ok) throw new Error('Failed to fetch');
-      
-      const blob = await response.blob();
-      
-      // Create blob URL
-      const blobUrl = URL.createObjectURL(blob);
-      
-      // Create download link
+    if (isAndroid) {
+      // Android Intent - Format đúng chuẩn
       const link = document.createElement('a');
-      link.href = blobUrl;
-      link.download = file.name || 'video.mp4';
       
-      // Force download attribute để trigger "Open with..."
-      link.setAttribute('download', file.name || 'video.mp4');
+      // Giữ nguyên URL đầy đủ, KHÔNG remove protocol
+      const videoUrl = file.url;
+      const mimeType = file.url.endsWith(".webm") ? "video/webm" : "video/mp4";
+      
+      // Intent URL format ĐÚNG - dùng S.browser_fallback_url
+      link.href = `intent:${videoUrl}#Intent;action=android.intent.action.VIEW;type=${mimeType};S.browser_fallback_url=${encodeURIComponent(videoUrl)};end`;
       
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
       
-      // Cleanup blob URL
-      setTimeout(() => {
-        URL.revokeObjectURL(blobUrl);
-        setIsLoading(false);
-      }, 1000);
+      console.log("Intent URL:", link.href);
       
-    } catch (error) {
-      console.error('Error:', error);
-      setIsLoading(false);
+    } else if (isIOS) {
+      // iOS: Tạo temporary <a> link với target _blank
+      const link = document.createElement('a');
+      link.href = file.url;
+      link.target = '_system'; // iOS specific
       
-      // Fallback: mở direct URL
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+    } else {
+      // Desktop
       window.open(file.url, '_blank');
     }
   };
@@ -67,14 +59,6 @@ const VideoPopupItem: React.FC<VideoPopupItemProps> = ({ file }) => {
       onClick={openInNativePlayer}
       className="group flex cursor-pointer flex-col items-center gap-5 p-2 py-10 shadow-xl hover:bg-gray-100 relative transition-all"
     >
-      {/* Loading overlay */}
-      {isLoading && (
-        <div className="absolute inset-0 bg-white bg-opacity-90 flex flex-col items-center justify-center z-20 rounded-xl">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600 mb-2"></div>
-          <div className="text-sm text-gray-600">Preparing video...</div>
-        </div>
-      )}
-      
       <div className="rounded-xl border p-3 shadow-sm w-full">
         <div className="relative flex h-40 w-full items-center justify-center rounded-lg bg-gradient-to-br from-blue-900 via-purple-900 to-gray-900 overflow-hidden">
           {/* Animated background */}
@@ -102,7 +86,7 @@ const VideoPopupItem: React.FC<VideoPopupItemProps> = ({ file }) => {
             <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
             </svg>
-            <span>Open with...</span>
+            <span>Native</span>
           </div>
         </div>
 
@@ -118,7 +102,7 @@ const VideoPopupItem: React.FC<VideoPopupItemProps> = ({ file }) => {
               {file.url.endsWith(".webm") ? "WebM" : "MP4"}
             </span>
             <span>•</span>
-            <span>Tap to download & open</span>
+            <span>Tap to play</span>
           </div>
         </div>
       </div>
