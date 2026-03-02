@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 export enum FileType {
@@ -52,11 +53,11 @@ const NativePlayer = () => {
       {videoMockdata
         .filter((file: File) => file.type === FileType.VIDEO)
         .map((file: File) => (
-          <a
+          <div
             key={file.sk}
-            href={`${file.url}`}
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={() => {
+              window.location.href = file.url;
+            }}
             className="group flex cursor-pointer flex-col items-center gap-5 p-2 py-10 shadow-xl hover:bg-gray-100"
           >
             <div className="rounded-xl border p-3 shadow-sm">
@@ -65,9 +66,9 @@ const NativePlayer = () => {
               </div>
 
               <div className="mt-2 text-sm font-medium">{file.name}</div>
-              <div className="text-xs text-gray-400">WEBM Video</div>
+              <div className="text-xs text-gray-400">MP4 Video</div>
             </div>
-          </a>
+          </div>
         ))}
     </div>
   );
