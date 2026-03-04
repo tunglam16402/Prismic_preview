@@ -1,5 +1,8 @@
-import React from "react";
-import VideoPopupItem from "./VideoPopup";
+"use client";
+
+import React, { useState } from "react";
+import { VideoPopup } from "../video/videoPopup/VideoPopup";
+import { VideoCard } from "../video/video-card/VideoCard";
 
 export enum FileType {
   DOCUMENT = "document",
@@ -13,6 +16,7 @@ export interface File {
   category: string;
   name: string;
   type: FileType;
+  thumbnail: string;
 }
 
 export const mockFiles: File[] = [
@@ -22,6 +26,7 @@ export const mockFiles: File[] = [
     category: "nature",
     url: "https://www.w3schools.com/html/mov_bbb.mp4",
     type: FileType.VIDEO,
+    thumbnail: "",
   },
   {
     sk: "video-2",
@@ -29,6 +34,7 @@ export const mockFiles: File[] = [
     category: "nature",
     url: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
     type: FileType.VIDEO,
+    thumbnail: "",
   },
   {
     sk: "video-3",
@@ -36,6 +42,7 @@ export const mockFiles: File[] = [
     category: "animation",
     url: "https://media.w3.org/2010/05/sintel/trailer.mp4",
     type: FileType.VIDEO,
+    thumbnail: "",
   },
   {
     sk: "video-4",
@@ -43,19 +50,35 @@ export const mockFiles: File[] = [
     category: "wildlife",
     url: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm",
     type: FileType.VIDEO,
+    thumbnail: "",
   },
 ];
 
 const NativePlayer = () => {
+  const [openVideo, setOpenVideo] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState<File | null>(null);
+  const handleOpenVideoPopup = (file: File) => {
+    setSelectedVideo(file);
+    setOpenVideo(true);
+  };
   const videoMockdata = mockFiles;
   return (
-    <div className="mx-auto grid max-w-[80%] grid-cols-2 gap-3 xl:grid-cols-4">
-      {videoMockdata
-        .filter((file: File) => file.type === FileType.VIDEO)
-        .map((file: File) => (
-          <VideoPopupItem file={file} key={file.sk} />
+    <>
+      <div className="mx-auto mt-2 flex flex-wrap gap-3 sm:max-w-[60%] md:max-w-[90%]">
+        {videoMockdata.map((file: File) => (
+          <div key={file.sk} onClick={() => handleOpenVideoPopup(file)}>
+            <VideoCard file={file} />
+          </div>
         ))}
-    </div>
+      </div>
+
+      <VideoPopup
+        open={openVideo}
+        onClose={() => setOpenVideo(false)}
+        url={selectedVideo?.url ?? null}
+        title={selectedVideo?.name}
+      />
+    </>
   );
 };
 
