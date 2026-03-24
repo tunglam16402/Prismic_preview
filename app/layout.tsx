@@ -4,6 +4,7 @@ import "./globals.css";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import PagePreview from "@/components/PreviewBanner";
+import LandscapeGuard from "@/components/LandscapeGuard";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-        {/* <PrismicPreview repositoryName={repositoryName} /> */}
-        {/* <PagePreview /> */}
+        <LandscapeGuard>{children}</LandscapeGuard>
       </body>
     </html>
   );

@@ -9,7 +9,7 @@ type Props = {
 export const VideoCard: FC<Props> = ({ file }) => {
   return (
     <div className="group cursor-pointer">
-      <div className="relative w-full">
+      <div className="relative w-[800px]">
         <VideoThumbnail thumbnail={file?.thumbnail} />
       </div>
 

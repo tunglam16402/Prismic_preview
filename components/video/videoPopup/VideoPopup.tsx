@@ -24,7 +24,7 @@ export const VideoPopup: FC<Props> = ({ open, onClose, url, title }) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     <Dialog open={open} onOpenChange={(v: any) => !v && onClose()}>
       <DialogContent
-        className="flex h-dvh w-screen max-w-full items-center justify-center bg-black sm:max-w-full p-0"
+        className="flex h-dvh w-screen max-w-full items-center justify-center bg-black md:bg-transparent border-none sm:max-w-full p-0"
         // closeBtn={
         //   <button className="absolute top-0 right-2 cursor-pointer p-4 text-gray-300 hover:text-gray-100">
         //     <X className="size-7 md:size-8" />

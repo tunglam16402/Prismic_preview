@@ -64,7 +64,7 @@ const NativePlayer = () => {
   const videoMockdata = mockFiles;
   return (
     <>
-      <div className="mx-auto mt-2 flex flex-wrap gap-3 sm:max-w-[60%] md:max-w-[90%]">
+      <div className="mx-auto mt-2 flex flex-wrap gap-3 ">
         {videoMockdata.map((file: File) => (
           <div key={file.sk} onClick={() => handleOpenVideoPopup(file)}>
             <VideoCard file={file} />
