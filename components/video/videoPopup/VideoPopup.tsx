@@ -1,6 +1,6 @@
 "use client";
 
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { useEffect, useRef, type FC } from "react";
 
 type Props = {
@@ -32,13 +32,12 @@ export const VideoPopup: FC<Props> = ({ open, onClose, url, title }) => {
         // }
       >
         {title && (
-          <div className="absolute top-0 left-0 w-full px-6 py-4 text-gray-300 md:px-8">
+          <DialogTitle className="absolute top-0 left-0 w-full px-6 py-4 text-gray-300 md:px-8">
             <p className="max-w-[70%] truncate text-base font-medium md:max-w-[30%]">
               {title}
             </p>
-          </div>
+          </DialogTitle>
         )}
-
         {url && (
           <video
             ref={videoRef}
