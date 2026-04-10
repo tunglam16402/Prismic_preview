@@ -1,0 +1,174 @@
+[
+  {
+    "id": "p-orders-p_0",
+    "category": "ORDERS",
+    "questions": [
+      {
+        "question": "ORDER CONFIRMATION",
+        "answer": "Once your order is placed, you will receive an order confirmation by email – and once your order is sent, you will receive a tracking confirmation by email. If you haven't received this, please contact us at info@printworksmarket.com for confirmation."
+      },
+      {
+        "question": "CANCEL/CHANGE ORDER",
+        "answer": "If you want to cancel or do changes in your order, please email info@printworksmarket.com as soon as possible, and we'll see what we can do. Please note that even if you contact us immediately, we can’t guarantee cancellation or changes."
+      },
+      {
+        "question": "WRONG INFORMATION",
+        "answer": "If you have entered wrong personal information, like delivery address, phone number, name or similar, please email us at info@printworksmarket.com as soon as possible so that we can update this information before the order is being sent."
+      },
+      {
+        "question": "PAYMENT OPTIONS",
+        "answer": "We guarantee safe payments and offer several different payment options – both local and global ones:Apple PayPayPalKlarna (Pay Now & Pay Later)VisaMastercardAmerican ExpressUnion PayIdealBancontact"
+      }
+    ]
+  },
+  {
+    "id": "p-shipping-em-delivery-em-p_4",
+    "category": "SHIPPING & delivery",
+    "questions": [
+      {
+        "question": "MARKETS",
+        "answer": "At printworksmarket.com we ship to the following countries: Austria, Denmark, Belgium, Bulgaria, Canada, Czech Republic, Croatia, Estonia, Finland, France, Germany, India, Ireland, Italy, Latvia, Lithuania, Netherlands, Poland, Portugal, Spain, Sweden, Switzerland, United Kingdom & Northern Ireland and the United States."
+      },
+      {
+        "question": "DELIVERY TIME",
+        "answer": "We offer next-day delivery option to all markets if you choose our express shipping option in checkout. Please note that your order needs to be placed before 1pm to be delivered the next business day, elsewise your delivery times adds up with one day extra. If you don't want to pay extra for express shipping, we offer other shipping alternatives, please see below:Sweden1-3 Business Days.Belgium, Netherlands, Denmark, Finland, Germany, Poland2-3 Business Days.Austria, Czechia, Estonia, France, Italy, Latvia, Lithuania, Spain, Portugal3-4 Business Days.Bulgaria, Croatia, Ireland, United Kingdom4-5 Business Days.Switzerland: 1-2 Business Days.United States2-5 Business Days. Canada4-8 Business Days.Please note that delivery times are longer if you include personalization or photo prints with your order.Delivery times may also vary due to factors beyond our control, but we’ll always do our best to get your order to you as quickly as possible."
+      },
+      {
+        "question": "SHIPPING COSTS",
+        "answer": "Free shipping is offered to all markets for orders above 79€/£, 599 kr, $90.Austria, Belgium, Czech Republic, France, Finland, Germany, Italy, Netherlands, Poland, Portugal, Spain, Bulgaria, Croatia, Estonia, Ireland, Latvia, Lithuania: From €8Switzerland: €15United Kingdom: From £9Sweden: From 49 SEKDenmark: From 49 DKKUnited States: From $9Canada: From $12We also offer express shipping at a cost of 20€/£, $20."
+      },
+      {
+        "question": "LOST PACKAGE",
+        "answer": "If your order is marked as delivered but you didn’t receive it, please check around your delivery area, ask neighbors if they may have received it by mistake, and check with your local postal service. If it still hasn’t turned up, contact our customer service team for further assistance.If your package is automatically returned to us, it’s usually due to an incorrect address, multiple failed delivery attempts, or the recipient declining the delivery. Please note that you will be responsible for any costs associated with the return of packages that are unclaimed or returned due to incorrect address information."
+      }
+    ]
+  },
+  {
+    "id": "p-returns-em-em-em-claims-em-p_8",
+    "category": "RETURNS & claims",
+    "questions": [
+      {
+        "question": "RETURN CONDITIONS",
+        "answer": "The return must be made within 30 days from the date you received the delivery. The product needs to be in the same condition as when you received it, meaning no plastic or wrapping can be removed from the product.If you've bought your product from any of our retailers, please contact them directly in case you need to do a return or a reclamation."
+      },
+      {
+        "question": "HOW TO RETURN",
+        "answer": "Email us at info@printworksmarket.com with your order number if you'd like to return your product, and we'll send you a prepaid return label by email.Your feedback matters to us. Please include your reason for return in the email so we can continue refining both our design and experience."
+      },
+      {
+        "question": "RETURN COST",
+        "answer": "Austria, Belgium, Czech Republic, France, Finland, Germany, Italy, Netherlands, Poland, Portugal, Spain: 8€Bulgaria, Croatia, Estonia, Ireland, Latvia, Lithuania: 9€Switzerland: €20United Kingdom: 9£Sweden: 59 SEKDenmark: 59 DKKUnited States: $9Canada: $12Please note that if your order exceeds 500 € /£/$ or 5000 kr, your return cost will be higher than the return costs listed above."
+      },
+      {
+        "question": "REFUND",
+        "answer": "Our aim is to handle your return as soon as possible and we aim to have it handled and refunded within 2 weeks. However, please keep in mind that processing times may vary depending on shipping and peak seasons. We will notify you once we issued the refund.Please note that shipping costs are non-refundable."
+      },
+      {
+        "question": "CLAIMS",
+        "answer": "If your product is damaged or broken, please email info@printworksmarket.com with image and description that shows the faulty product together with your order number for faster assistance, and we'll be happy to help you."
+      },
+      {
+        "question": "UNCLAIMED PACKAGE",
+        "answer": "Packages not collected at service points within 14 days will be returned to PRINTWORKS, and you will be responsible for any cost associated with the return of unclaimed packages. Please see costs per market below.Austria, Belgium, Czech Republic, France, Finland, Germany, Italy, Netherlands, Poland, Portugal, Spain: 9€Bulgaria, Croatia, Estonia, Ireland, Latvia, Lithuania : 10€Sweden: 69 SEKDenmark: 69 DKKUnited Kingdom: 10£"
+      }
+    ]
+  },
+  {
+    "id": "p-products-p_14",
+    "category": "PRODUCTS",
+    "questions": [
+      {
+        "question": "BACK IN STOCK",
+        "answer": "The products are produced continuously, which makes it difficult to answer precisely when your favorite item is back in stock. Please send us an email if you wonder about any specific product – and make sure to sign up for email notification on the product page."
+      },
+      {
+        "question": "PRODUCTION & MATERIAL",
+        "answer": "Our products are designed in Sweden and produced in China. Please check out the product pages to see what materials they contain."
+      }
+    ]
+  },
+  {
+    "id": "p-photo-em-print-em-p_16",
+    "category": "PHOTO print",
+    "questions": [
+      {
+        "question": "CURRENTLY OUT OF ORDER",
+        "answer": "Our Photo Print service is currently out of order due to technical issues. We’re working to restore it as quickly as possible.If you’ve already placed a Photo Print order and have questions, please reach out to us at info@printworksmarket.com."
+      }
+    ]
+  },
+  {
+    "id": "p-personalization-p_18",
+    "category": "PERSONALIZATION",
+    "questions": [
+      {
+        "question": "What does “personalization” mean?",
+        "answer": "We offer a selection of products that can be personalized with a text! It could be with your name, initials, or a meaningful word. It’s our way of making each piece uniquely yours."
+      },
+      {
+        "question": "Is personalisation no longer available for your favourite product?",
+        "answer": "At the moment, we only offer this feature on a limited selection of items as we want to ensure the highest quality and service. However, we will be expanding the range again in the future."
+      },
+      {
+        "question": "How does it work?",
+        "answer": "- A selection of our products can be personalized with one or two lines of text, some only one, depending on the available space.- Each product offers its own set of color options and two font styles, displayed directly on the product page for easy reference. The available colors are silver, gold, black, and white and the exact options vary depending on the color and material of the product being personalized.- The placement of the text is pre-set to ensure the best possible result. You'll be able to see a preview of how your text will look, but please be aware that it could differ a little bit from the reality."
+      },
+      {
+        "question": "What if my name doesn’t fit?",
+        "answer": "Some products have a maximum character limit to ensure the design remains balanced. Try using a smaller font size or splitting your text into two lines. If it still doesn’t fit, you may need to shorten the text, or choose a product with more space for personalization."
+      },
+      {
+        "question": "Which of your products can be personalized?",
+        "answer": "You’ll find all products best suited for personalization gathered on our Personalization page, and each personalized product is marked with a “Personalize” button on its product page."
+      },
+      {
+        "question": "How much does personalization cost?",
+        "answer": "The cost of personalization is €20 / £20 or 199 SEK / DKK."
+      },
+      {
+        "question": "If I order both a personalized and a regular product, will they arrive together?",
+        "answer": "Yes, we always aim to ship all items from one order in the same package. Please note that personalized products require a bit more time to prepare, and express shipping is not available. If you need your non-personalized item sooner, we recommend placing two separate orders."
+      },
+      {
+        "question": "Can I return a personalized product?",
+        "answer": "Due to the personalized nature of these items, returns are not accepted unless the product is damaged or defective upon arrival.If your item arrives with a manufacturing issue, please contact our customer support at info@printworksmarket.com within 30 days of delivery and include photographic evidence so we can assist you further."
+      },
+      {
+        "question": "Will it look exactly like the preview?",
+        "answer": "Almost, but not always perfectly identical. Minor variations may occur, though the final result will closely match the design shown."
+      },
+      {
+        "question": "Is personalization available worldwide?",
+        "answer": "At the moment, our personalization service is only available within the EU and the UK. We're working on expanding to other regions, including the US, and hope to offer it soon. Stay tuned!"
+      }
+    ]
+  },
+  {
+    "id": "p-discounts-em-promotions-em-p_28",
+    "category": "DISCOUNTS & Promotions",
+    "questions": [
+      {
+        "question": "Do you offer discounts?",
+        "answer": "We occasionally run limited-time offers, shared exclusively through our newsletter or social media.Sign up to be the first to know."
+      },
+      {
+        "question": "Do discounts apply to all products?",
+        "answer": "Discounts do not apply to bundles, gift bags, or gift tags. Additional exclusions may apply."
+      },
+      {
+        "question": "Can I add a discount code after placing my order?",
+        "answer": "Unfortunately, discount codes can’t be applied retroactively once an order has been placed."
+      }
+    ]
+  },
+  {
+    "id": "p-taxes-duties-p_31",
+    "category": "TAXES & DUTIES",
+    "questions": [
+      {
+        "question": "Taxes & Duties Explained",
+        "answer": "All orders within the European Union are shipped from our warehouse in Sweden, meaning no additional taxes or duties will be added to your order."
+      }
+    ]
+  }
+]

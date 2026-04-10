@@ -13,6 +13,8 @@
     "@prismicio/client": "^7.21.1",
     "@prismicio/next": "^2.0.2",
     "@prismicio/react": "^3.2.2",
+    "axios": "^1.14.0",
+    "cheerio": "^1.2.0",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
@@ -37,6 +39,7 @@
     "eslint-config-next": "16.1.1",
     "slice-machine-ui": "^2.20.5",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
